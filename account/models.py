@@ -10,6 +10,7 @@ class User(AbstractUser):
     username = models.CharField(max_length=30, unique=True)
     email = models.EmailField(_('email address'), unique=True, max_length=50)
     is_email_verified = models.BooleanField(default=False)
+    password1 = models.CharField(max_length=20, default='password')
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username','is_email_verified']
